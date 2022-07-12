@@ -14,8 +14,7 @@
         "sourceType": "module"
     },
     "plugins": [
-        "@typescript-eslint",
-        "eslint-plugin-import-helpers"
+        "@typescript-eslint"
     ],
     "rules": {
         "semi": ["error", "never"],
@@ -31,11 +30,6 @@
                     "match": true
                 }
             }
-		],
-        "settings": {
-            "import/resolver": {
-              "typescript": {}
-            }
-        }
+		]
     }
 }
