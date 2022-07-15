@@ -20,6 +20,7 @@
         "semi": ["error", "never"],
         "no-console": "warn",
         "import/no-unresolved": "error",
+        "import/prefer-default-export": "off",
         "@typescript-eslint/naming-convention": [
             "error",
             {
@@ -30,6 +31,13 @@
                     "match": true
                 }
             }
-		]
+		],
+        "settings": {
+            "import/resolver": {
+                "node": {
+                    "extensions": [".js", ".jsx", ".ts", ".tsx"]
+                }
+            }
+        }
     }
 }

@@ -1,9 +1,9 @@
 import express from 'express'
+import { categoriesRoutes } from './routes/categories.routes'
 
 const app = express()
 app.use(express.json())
-
-app.get('/', (req, resp) => resp.json({ message: 'Hello Dev Typescript' }))
+app.use(categoriesRoutes)
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000')
