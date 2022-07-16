@@ -17,6 +17,11 @@ class CategoriesRepository {
     return this.categories
   }
 
+  findByCategory(cat: string): Category {
+    const categ = this.categories.find(category => category.name === cat)
+    return categ
+  }
+
   create({ name, description }: CreateCategoryDTO): void {
     const category = new Category
 
