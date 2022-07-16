@@ -9,7 +9,13 @@ categoriesRoutes.post('/categories', (req, resp) => {
 
   categoriesRepository.create({name, description})
 
-  return resp.status(201).json(categoriesRepository.getCategories())
+  return resp.status(201).send()
+})
+
+categoriesRoutes.get('/categories', (req, resp) => {
+  const categories = categoriesRepository.getCategories()
+  
+  return resp.json(categories)
 })
 
 export { categoriesRoutes }

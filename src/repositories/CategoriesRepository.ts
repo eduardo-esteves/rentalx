@@ -13,7 +13,7 @@ class CategoriesRepository {
     this.categories = []
   }
 
-  getCategories() {
+  getCategories(): Category[] {
     return this.categories
   }
 
