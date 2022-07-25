@@ -17,13 +17,18 @@ class CategoriesRepository {
     return this.categories
   }
 
-  findByCategory(cat: string): Category {
-    const categ = this.categories.find(category => category.name === cat)
-    return categ
+  findByCategory(cat: string): Category | undefined {
+    return this.categories.find(category => category.name === cat)
   }
 
   create({ name, description }: CreateCategoryDTO): void {
     const category = new Category
+
+    const categoryAlreadyExists = this.findByCategory(name)
+
+    if (categoryAlreadyExists) {
+      throw new Error(`Categoria ${name} já existe`)
+    }
 
     Object.assign(category, {
       name,
