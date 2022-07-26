@@ -1,6 +1,6 @@
 import Category from "../model/Category"
 
-interface CreateCategoryDTO {
+export interface CreateCategoryDTO {
   name: string;
   description: string;
 }
@@ -23,12 +23,6 @@ class CategoriesRepository {
 
   create({ name, description }: CreateCategoryDTO): void {
     const category = new Category
-
-    const categoryAlreadyExists = this.findByCategory(name)
-
-    if (categoryAlreadyExists) {
-      throw new Error(`Categoria ${name} já existe`)
-    }
 
     Object.assign(category, {
       name,
